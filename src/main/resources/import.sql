@@ -1,0 +1,1 @@
+INSERT INTO category(name, rating, description, url) VALUES ('First category', 5, 'A simple category', 'https://production.autoforce.com/uploads/version/profile_image/7009/comprar-gli_59ebc43f05.png');
