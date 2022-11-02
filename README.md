@@ -1,3 +1,3 @@
 # first_pi_project
 
-Backend
+Backend, frontend and Database
