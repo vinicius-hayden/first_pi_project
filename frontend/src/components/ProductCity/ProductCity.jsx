@@ -1,30 +1,36 @@
-import "./Products.css";
-
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import { useParams } from "react-router-dom";
+import "./ProductCity.css"
 
-export default function Products() {
+export default function ProductCity() {
+  const { idCity } = useParams();
   const [products, setProducts] = useState([]);
-
   let requestConfigurationGet = {
     headers: {
       "Content-Type": "application/json",
       Authorization: localStorage.getItem("token"),
     },
   };
-
+  
   useEffect(() => {
-    fetch("http://localhost:9000/products", requestConfigurationGet)
+    fetch(`http://localhost:9000/products/?cityId=${idCity}`, requestConfigurationGet)
       .then((response) => response.json())
       .then((productsJSON) => setProducts(productsJSON));
   }, []);
 
   return (
     <>
-      <div className="div-products">
-        <h2 className="div-title">Recomendações</h2>
-
-        {products.map((product, index) => (
+      <Header/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      {products.map((product, index) => (
           <div className="products" key={index}>
             <div className="products-card">
               <div className="div-products-information">
@@ -39,7 +45,7 @@ export default function Products() {
             </div>
           </div>
         ))}
-      </div>
+      <Footer/>
     </>
-  );
+  )
 }
