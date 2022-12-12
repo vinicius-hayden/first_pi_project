@@ -1,4 +1,4 @@
 # first_pi_project
 
 
-# This project consists of a car rental website
+# This project consists of a car rental website.
